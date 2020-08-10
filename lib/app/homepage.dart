@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.black));
+        SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.white12));
     return Scaffold(
       backgroundColor: AppColor.ksubMainColor,
       // appBar: AppBar(
@@ -90,119 +90,117 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           child: Column(
             children: [
-              Card(
-                margin: EdgeInsets.all(0),
-                elevation: 40.0,
-                child: Stack(
-                  children: [
-                    // Container(
-                    //     height: 100.0,
-                    //     alignment: Alignment.center,
-                    //     decoration:
-                    //         BoxDecoration(color: Colors.black, boxShadow: [
-                    //       BoxShadow(
-                    //           spreadRadius: 1,
-                    //           offset: Offset(1, 2),
-                    //           // color: Colors.black,
-                    //           blurRadius: 1),
-                    //              BoxShadow(
-                    //           spreadRadius: 1,
-                    //           offset: Offset(1, 2),
-                    //           // color: Colors.black,
-                    //           blurRadius: 1),
-                    //              BoxShadow(
-                    //           spreadRadius: 1,
-                    //           offset: Offset(2, 2),
-                    //           // color: Colors.black,
-                    //           blurRadius: 1)
-                    //     ])),
-                    Container(
-                      height: 100.0,
-                      alignment: Alignment.center,
-                      decoration:
-                          BoxDecoration(color: Colors.black, boxShadow: [
+              Stack(
+                children: [
+                  // Container(
+                  //     height: 100.0,
+                  //     alignment: Alignment.center,
+                  //     decoration:
+                  //         BoxDecoration(color: Colors.black, boxShadow: [
+                  //       BoxShadow(
+                  //           spreadRadius: 1,
+                  //           offset: Offset(1, 2),
+                  //           // color: Colors.black,
+                  //           blurRadius: 1),
+                  //              BoxShadow(
+                  //           spreadRadius: 1,
+                  //           offset: Offset(1, 2),
+                  //           // color: Colors.black,
+                  //           blurRadius: 1),
+                  //              BoxShadow(
+                  //           spreadRadius: 1,
+                  //           offset: Offset(2, 2),
+                  //           // color: Colors.black,
+                  //           blurRadius: 1)
+                  //     ])),
+                  Container(
+                    height: 100.0,
+                    margin: EdgeInsets.all(0),
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white12,
+                      boxShadow: [
                         BoxShadow(
-                            spreadRadius: 5,
-                            offset: Offset(1, 2),
-                            color: Colors.black,
-                            blurRadius: 50)
-                      ]),
-                      child: ListTile(
-                        title: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          offset: Offset(0.5, 2.5),
+                        )
+                      ],
+                    ),
+                    child: ListTile(
+                      title: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "The very best of mine",
+                              style:
+                                  TextStyle(fontSize: 17, color: Colors.white),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Text("Miles Dive",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.grey)),
+                          ),
+                        ],
+                      ),
+                      trailing: Container(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          fit: StackFit.loose,
                           children: [
                             Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "The very best of mine",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              ),
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: Color(0xff3E3122),
+                                  borderRadius: BorderRadius.circular(50)),
                             ),
                             Container(
-                              alignment: Alignment.topLeft,
-                              child: Text("Miles Dive",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  color: Color(0xffC49058),
+                                  borderRadius: BorderRadius.circular(50)),
+                            ),
+                            Container(
+                              child: _select == false
+                                  ? GestureDetector(
+                                      onTap: () {
+                                        print("tap");
+
+                                        setState(() {
+                                          _select = true;
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.pause,
+                                        color: AppColor.kmainColor,
+                                      ),
+                                    )
+                                  : GestureDetector(
+                                      onTap: () {
+                                        print("tap2");
+
+                                        setState(() {
+                                          _select = false;
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.play_arrow,
+                                        color: AppColor.kmainColor,
+                                      ),
+                                    ),
                             ),
                           ],
                         ),
-                        trailing: Container(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            fit: StackFit.loose,
-                            children: [
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Color(0xff3E3122),
-                                    borderRadius: BorderRadius.circular(50)),
-                              ),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    color: Color(0xffC49058),
-                                    borderRadius: BorderRadius.circular(50)),
-                              ),
-                              Container(
-                                child: _select == false
-                                    ? GestureDetector(
-                                        onTap: () {
-                                          print("tap");
-
-                                          setState(() {
-                                            _select = true;
-                                          });
-                                        },
-                                        child: Icon(
-                                          Icons.pause,
-                                          color: AppColor.kmainColor,
-                                        ),
-                                      )
-                                    : GestureDetector(
-                                        onTap: () {
-                                          print("tap2");
-
-                                          setState(() {
-                                            _select = false;
-                                          });
-                                        },
-                                        child: Icon(
-                                          Icons.play_arrow,
-                                          color: AppColor.kmainColor,
-                                        ),
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Container(
                 padding: EdgeInsets.all(20),
@@ -232,12 +230,16 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(2, 1),
-                      color: Colors.grey,
+                      offset: Offset(5, 1),
+
+                      color: Colors.blueGrey,
+
                       // spreadRadius: 2
                     )
                   ],
+
                   // borderRadius: BorderRadius.circular(50),
+
                   color: Colors.grey,
                 ),
                 height: 1.5,
@@ -247,10 +249,15 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 height: 115,
                 alignment: Alignment.bottomCenter,
-               margin: EdgeInsets.all(10),
+                margin: EdgeInsets.all(25),
                 decoration: BoxDecoration(
-                  color: Color(0xff111111),
-                  borderRadius: BorderRadius.circular(50)),
+                    color: Colors.white12,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(1, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(60)),
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -269,7 +276,7 @@ class _HomePageState extends State<HomePage> {
                             child: CircularProgressIndicator(),
                           ),
                           radius: 55,
-                          elevation: 5.0,
+                          elevation: 10.0,
                           onTap: () {
                             print('adil');
                           },
@@ -292,25 +299,28 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                 Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "The very best of mine",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              child: Text("Miles Dive",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.grey)),
-                            ),
-                          ],
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          // alignment: Alignment.,
+                          child: Text(
+                            "The very best of mine",
+                            style: TextStyle(fontSize: 17, color: Colors.white),
+                          ),
                         ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text("Miles Dive",
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.grey)),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               )

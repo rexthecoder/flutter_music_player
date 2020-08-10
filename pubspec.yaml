@@ -20,6 +20,7 @@ dependencies:
   auto_route: ^0.6.7
   font_awesome_flutter: ^8.8.1
   circular_profile_avatar: ^1.0.6
+  circular_bottom_navigation: ^1.0.1
 
 dev_dependencies:
   flutter_test:
